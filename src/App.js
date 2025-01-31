@@ -1,10 +1,11 @@
-import './App.css';
-import TaskList from './components/tasklist/tasklist';
+import Tasks from './components/Tasks/Tasks';
+import Header from './components/Header/Header'
 
 function App() {
   return (
     <div className="App">
-      <TaskList />
+      <Header />
+      <Tasks />
     </div>
   );
 }
