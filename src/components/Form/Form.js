@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Form() {
+export default function Form({handleAddTask}) {
     const [description, setDescription] = useState("");
     const [status, setStatus] = useState("open");
     const [error, setError] = useState("");
@@ -13,7 +13,7 @@ export default function Form() {
             //clear error
             setError("");
             // handle form
-            console.log({description,status});
+            handleAddTask({description,status});
             // reset form
             setDescription("");
             setStatus("open");
