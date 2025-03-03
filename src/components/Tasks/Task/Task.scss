@@ -1,0 +1,77 @@
+.task {
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+
+    .task-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .task-id {
+        font-size: 0.9rem;
+    }
+
+    .task-status {
+        font-size: 1rem;
+        font-weight: bold;
+        margin: 0.5rem 0;
+
+        &.complete {
+            color: rgb(83, 139, 83);
+        }
+
+        &.incomplete {
+            color: rgb(109, 66, 66);
+        }
+    }
+
+    .task-buttons {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+
+        button {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            border: none;
+            border-radius: 5px;
+            color: white;
+
+            &.status-btn {
+                background: #656586;
+                &:hover {
+                    background: #4b4d63;
+                }
+            }
+
+            &.remove-btn {
+                background: #866565;
+                &:hover {
+                    background: #634b4b;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+        padding: 0.8rem;
+
+        .task-title {
+            font-size: 1rem;
+        }
+
+        .task-status {
+            font-size: 0.9rem;
+        }
+
+        .task-buttons {
+            flex-direction: column;
+
+            button {
+                width: 100%;
+                padding: 0.6rem;
+            }
+        }
+    }
+}

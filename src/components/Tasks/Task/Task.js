@@ -11,13 +11,23 @@ export default function Task(props) {
     }
 
     return (
-        <div>
+        <div className="task">
             <hr />
-            <h3>{props.task.description}</h3>
-            <div>Id: {props.task.id}</div>
-            <div>Status: {props.task.done ? "Complete" : "Incomplete"}</div>
-            <button onClick={() => handleStatusClick(props.task.id)}>Change Status</button>
-            <button onClick={() => handleRemoveClick(props.task.id)}>Remove Task</button>
+            <h3 className="task-title">{props.task.description}</h3>
+            <div className="task-id">Id: {props.task.id}</div>
+            <div className={`task-status ${props.task.done ? "complete" : "incomplete"}`}>
+                Status: {props.task.done ? "Complete" : "Incomplete"}
+            </div>
+
+            <div className="task-buttons">
+                <button className="status-btn" onClick={() => handleStatusClick(props.task.id)} >
+                    Change Status
+                </button>
+
+                <button className="remove-btn" onClick={() => handleRemoveClick(props.task.id)}>
+                    Remove Task
+                </button>
+            </div>
         </div>
     )
 }

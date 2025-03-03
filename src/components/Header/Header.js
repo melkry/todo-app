@@ -1,8 +1,11 @@
+import './Header.scss';
+import { FaTasks } from 'react-icons/fa';
+
 export default function Header() {
     return (
         <header>
-            <div>Todo App</div>
-            <div>by Melissa</div>
+            <div className='title'><FaTasks /> Todo App</div>
+            <div className='author'>by Melissa</div>
         </header>
     );
 }
