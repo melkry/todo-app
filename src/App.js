@@ -34,9 +34,9 @@ function App() {
   };
 
   const handleAddTask = (desc, status) => {
-    const newTask = {id: uuid(), description: desc, done: status};
+    const newTask = { id: uuid(), description: desc, done: status === "completed" };
     setTasks([...tasks, newTask]);
-  }
+  };
 
   return (
     <div className="App">

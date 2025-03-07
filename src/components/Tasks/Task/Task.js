@@ -1,3 +1,5 @@
+import './Task.scss';
+
 export default function Task(props) {
 
     const handleStatusClick = () => {

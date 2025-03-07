@@ -1,4 +1,4 @@
-import { useState } from "react";
+import './Tasks.scss';
 import Task from './Task/Task.js';
 
 export default function Tasks({ tasks, onStatusChange, onTaskRemove, onClearTasks }) {

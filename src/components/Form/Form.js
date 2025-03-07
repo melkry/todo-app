@@ -1,8 +1,10 @@
+import './Form.scss';
+
 import React, { useState } from "react";
 
-export default function Form({ handleAddTask }) {
+export default function Form({ onAddTask }) {
     const [description, setDescription] = useState("");
-    const [status, setStatus] = useState("open");
+    const [status, setStatus] = useState("incomplete");
     const [error, setError] = useState("");
 
     const handleSubmit = (e) => {
@@ -11,7 +13,7 @@ export default function Form({ handleAddTask }) {
             setError("Enter a description");
         } else {
             setError(""); // Clear error
-            handleAddTask({ description, status });
+            onAddTask( description, status );
             setDescription(""); // Reset form
             setStatus("open");
         }
@@ -41,7 +43,7 @@ export default function Form({ handleAddTask }) {
                     onChange={(e) => setStatus(e.target.value)}
                     className="form-select"
                 >
-                    <option value="open">Open</option>
+                    <option value="incomplete">Incomplete</option>
                     <option value="completed">Completed</option>
                 </select>
             </label>
