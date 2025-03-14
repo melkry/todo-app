@@ -1,16 +1,16 @@
 import { useState } from "react";
 import uuid from 'react-uuid';
-import './App.scss';
 
 import Tasks from './components/Tasks/Tasks';
 import Header from './components/Header/Header';
 import Form from './components/Form/Form';
-import Help from './components/Form/Form';
-import NotFound from './components/Form/Form';
-import HelpAdd from './components/HelpAdd/HelpAdd';
-import HelpChange from './components/HelpChange/HelpChange';
-import HelpRemove from './components/HelpRemove/HelpRemove';
-import { Router, Routes, Route, Link } from 'react-router-dom';
+import Help from './components/Help/Help';
+import NotFound from './components/NotFound/NotFound';
+import HelpAdd from './components/Help/HelpAdd/HelpAdd';
+import HelpChange from './components/Help/HelpChange/HelpChange';
+import HelpRemove from './components/Help/HelpRemove/HelpRemove';
+import HelpHome from './components/Help/HelpHome/HelpHome';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   const [tasks, setTasks] = useState([
@@ -46,7 +46,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <>
       <Header />
       <Routes>
         <Route path="/" element={
@@ -60,21 +60,15 @@ function App() {
         <Route path="/add" element={<Form onAddTask={handleAddTask}/>} />
 
         <Route path="/help" element={<Help />}>
-          <Route path="" element={<Help />} />
+          <Route path="" element={<HelpHome />} />
           <Route path="add" element={<HelpAdd />} />
           <Route path="remove" element={<HelpRemove />} />
           <Route path="change" element={<HelpChange />} />
-          <div className="help-links">
-            <Link to="">Introduction</Link>
-            <Link to="add">Adding Tasks</Link>
-            <Link to="remove">Removing Tasks</Link>
-            <Link to="change">Changing Status</Link>
-          </div>
         </Route>
 
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </Router>
+    </>
   );
 }
 

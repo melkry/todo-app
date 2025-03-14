@@ -1,10 +1,17 @@
 import './Help.scss';
+import { Link, Outlet } from "react-router-dom";
 
 export default function Help() {
     return (
         <div className="help-container">
-            <h2>Help</h2>
-            <p>This app will help you keep track of your tasks. Please use the links below to learn more:</p>
+            <Outlet />
+
+            <div className="help-links">
+                <Link to="">Introduction</Link>
+                <Link to="add">Adding Tasks</Link>
+                <Link to="remove">Removing Tasks</Link>
+                <Link to="change">Changing Status</Link>
+            </div>
         </div>
     );
 }
